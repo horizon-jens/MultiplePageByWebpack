@@ -1,0 +1,93 @@
+{
+  "id": "1573805",
+  "name": "ly",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9512564",
+      "name": "空",
+      "font_class": "empty",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "6547416",
+      "name": "详情",
+      "font_class": "xiangqing",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "11077392",
+      "name": "新增",
+      "font_class": "xinzeng",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1058101",
+      "name": "Password",
+      "font_class": "password",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "3370306",
+      "name": "医生",
+      "font_class": "yisheng",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "1963494",
+      "name": "费用科目",
+      "font_class": "feiyongkemu",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "10056208",
+      "name": "门诊耗占比",
+      "font_class": "menzhenhaozhanbi",
+      "unicode": "e6f2",
+      "unicode_decimal": 59122
+    },
+    {
+      "icon_id": "10056228",
+      "name": "门诊人次",
+      "font_class": "menzhenrenci",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
+      "icon_id": "10056254",
+      "name": "药占比",
+      "font_class": "yaozhanbi",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    },
+    {
+      "icon_id": "10268528",
+      "name": "本次住院记录",
+      "font_class": "bencizhuyuanjilu",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "10268649",
+      "name": "用药提醒",
+      "font_class": "yongyaotixing",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "12256727",
+      "name": "医保卡",
+      "font_class": "yibaoka",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    }
+  ]
+}
