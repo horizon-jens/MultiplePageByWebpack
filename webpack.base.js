@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 不再将样式内嵌到 JS bundle 而是独立分离压缩的 CSS 文件
-const webpack = require('webpack');
+// 不再将样式内嵌到 JS bundle 而是独立分离压缩的 CSS 文件
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
@@ -15,20 +15,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/[name].bundle.js',
         chunkFilename: './js/[name].bundle.js',
-    },
-    // optimization: {
-    //     splitChunks: {
-    //     chunks: 'all',
-    //     },
-    // },
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist',
-        hot: true,
-        port: 9000
-    },
-    stats: {
-        children: false
     },
     module: {
         rules: [{
@@ -67,8 +53,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].css',
