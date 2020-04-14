@@ -1,3 +1,5 @@
+import '../../assets/css/global.less'
+
 function dynamicImports() {
     import(/* webpackChunkName: "jquery" */ 'jquery').then(( { default: $ } ) => {
     
