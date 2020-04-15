@@ -8,27 +8,28 @@ let { entry, pages } = require('./page.config')
 
 module.exports = {
     entry,
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: './js/[name].bundle.js',
-        chunkFilename: './js/[name].bundle.js',
-    },
     resolve: {
         alias: {
-            'css': path.resolve(__dirname, 'src/assets/css/'),
-            'font': path.resolve(__dirname, 'src/assets/font/'),
-            'img': path.resolve(__dirname, 'src/assets/img/'),
-            'js': path.resolve(__dirname, 'src/assets/js/'),
+            'css': path.resolve(__dirname, '../', 'src/assets/css/'),
+            'font': path.resolve(__dirname, '../', 'src/assets/font/'),
+            'img': path.resolve(__dirname, '../', 'src/assets/img/'),
+            'js': path.resolve(__dirname, '../', 'src/assets/js/'),
         }
     },
     stats: {
         children: false
     },
     module: {
+        noParse: /jquery/,
         rules: [{
                 test: /\.less$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../',
+                        }
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -41,21 +42,32 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader',
-                ],
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'font',
+                    },
+                }]
             },
             {
                 test: /\.js$/,
-                use: ['babel-loader'],
-                // 不检查node_modules下的js文件
-                exclude: '/node_modules/'
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [{
                     loader: 'file-loader',
-                    options: {}
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'img',
+                    },
                 }]
             }
         ]
@@ -63,7 +75,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: 'css/[name].css',
         }),
         ...pages
     ],
