@@ -1,25 +1,30 @@
-@import '../font/iconfont.css';
-
-html * {
-    box-sizing: border-box;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 html,
-body,
-#app {
+body{
     height: 100%;
     width: 100%;
     background: rgba(245, 245, 245, 1);
-}
-
-#app {
+    font-size: 14px;
     font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC" , "WenQuanYi Micro Hei", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 28px;
-    -webkit-overflow-scrolling: touch;
 }
 
 ul,
@@ -34,21 +39,15 @@ select {
     vertical-align: middle;
 }
 
-a {
-    text-decoration: none;
-}
-
+a,
 a:hover,
 a:active,
 a:focus {
     text-decoration: none;
 }
 
-
 .wrap {
     position: relative;
     width: 100%;
     height: 100%;
-    font-size: 14px;
-    background: #f00;
 }

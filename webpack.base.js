@@ -1,10 +1,10 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 // 不再将样式内嵌到 JS bundle 而是独立分离压缩的 CSS 文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+let PageInfo = require('./page.config')
 
 module.exports = {
     entry: {
@@ -15,6 +15,17 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/[name].bundle.js',
         chunkFilename: './js/[name].bundle.js',
+    },
+    resolve: {
+        alias: {
+            'css': path.resolve(__dirname, 'src/assets/css/'),
+            'font': path.resolve(__dirname, 'src/assets/font/'),
+            'img': path.resolve(__dirname, 'src/assets/img/'),
+            'js': path.resolve(__dirname, 'src/assets/js/'),
+        }
+    },
+    stats: {
+        children: false
     },
     module: {
         rules: [{
@@ -57,17 +68,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
         }),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            title: 'index',
-            chunks: ['index'],
-            template: './src/views/index/index.html',
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'detail.html',
-            title: 'detail',
-            chunks: ['detail'],
-            template: './src/views/detail/index.html',
-        }),
+        ...PageInfo
     ],
 };

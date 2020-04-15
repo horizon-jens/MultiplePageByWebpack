@@ -8,6 +8,7 @@ module.exports = smart(base, {
     devServer: {
         contentBase: './dist',
         hot: true,
+        open: true,
         port: 9000
     },
     plugins: [
