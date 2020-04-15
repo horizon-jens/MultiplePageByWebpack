@@ -4,13 +4,10 @@ const {
 } = require('clean-webpack-plugin');
 // 不再将样式内嵌到 JS bundle 而是独立分离压缩的 CSS 文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-let PageInfo = require('./page.config')
+let { entry, pages } = require('./page.config')
 
 module.exports = {
-    entry: {
-        index: './src/views/index/index.js',
-        detail: './src/views/detail/index.js'
-    },
+    entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/[name].bundle.js',
@@ -68,6 +65,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
         }),
-        ...PageInfo
+        ...pages
     ],
 };
