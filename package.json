@@ -4,6 +4,7 @@
   "description": "normal-webpack-demo",
   "private": true,
   "scripts": {
+    "new": "sh ./new.sh",
     "dev": "webpack-dev-server --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"

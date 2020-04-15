@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         detail: './src/views/detail/main.js',
         index: './src/views/index/main.js',
+        test: './src/views/test/main.js',
         
     },
     pages: [
@@ -17,6 +18,11 @@ module.exports = {
             filename: 'index.html',
             chunks: ['index'],
             template: './src/views/index/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'test.html',
+            chunks: ['test'],
+            template: './src/views/test/index.html'
         }),
         
     ]
