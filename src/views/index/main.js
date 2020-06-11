@@ -1,11 +1,11 @@
 import 'css/global.less'
-import 'css/index.less'
+import './index.less'
 
 
 function dynamicImports() {
     import(/* webpackChunkName: "jquery" */ 'jquery').then(( { default: $ } ) => {
     
-        $('body').append(`<h1>this is the Index page!</h1>`);
+        $('.main').append(`<h1>这个是追加的内容。。。。。。，点击试试</h1>`);
 
         $('body').on('click', 'h1', () => {
             alert('Dynamic Imports')
@@ -15,11 +15,3 @@ function dynamicImports() {
 }
 
 dynamicImports()
-
-// import $ from 'jquery'
-
-// $('body').html(`<h1>this is the Index page!</h1>`);
-
-// $('body').on('click', 'h1', () => {
-//     alert('Dynamic Imports')
-// })
